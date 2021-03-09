@@ -1,0 +1,52 @@
+{
+  "name": "ar-things",
+  "version": "0.1.1-alpha02",
+  "private": false,
+  "description": "Make connections of things via web, and make things tangible on augmented reality.",
+  "author": "Cho Yeonwoo. Sio <yeonwoo.cho@yonsei.ac.kr> (https://mobed.yonsei.ac.kr)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ssioo/ArThings"
+  },
+  "bugs": "https://github.com/Ssioo/ArThings/issues",
+  "homepage": "https://github.com/Ssioo/ArThings",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "yarn tsc",
+    "check-dep": "yarn upgrade-interactive --latest"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.8.6 || ^17.0.0",
+    "react": "^16.8.0 || ^17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@tensorflow-models/coco-ssd": "^2.2.1",
+    "@tensorflow/tfjs-backend-cpu": "^3.3.0",
+    "@tensorflow/tfjs-backend-webgl": "^3.3.0",
+    "@tensorflow/tfjs-converter": "^3.3.0",
+    "@tensorflow/tfjs-core": "^3.3.0",
+    "aframe": "^1.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.33",
+    "@types/react": "^17.0.3",
+    "typescript": "^4.2.3"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "keywords": [
+    "AR",
+    "augmented reality",
+    "IoT",
+    "ar-things"
+  ]
+}
