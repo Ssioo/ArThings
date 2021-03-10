@@ -1,18 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { IoTAnalyzer } from 'ar-things'
+import { IoTVisionOverlay } from 'ar-things/src'
 
 const App = () => {
 
   return (
     <div>
-      <IoTAnalyzer
+      <IoTVisionOverlay
         modelUrl='interpolationTest.glb'
         onInitialized={() => {
           console.log('Model Initialized')
         }}
         onPredicted={(ps) => {
-
+          console.log(ps)
         }}
       />
     </div>

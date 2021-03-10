@@ -17,15 +17,27 @@ export interface IotAnalyzerStates {
 export class IoTVisionOverlay extends React.Component<IotAnalyzerProps, IotAnalyzerStates> {
   private analyzer = new VisionAnalyzer()
   private videoRef = createRef<HTMLVideoElement>()
+  private intervals: NodeJS.Timeout[] = []
 
   constructor(props: IotAnalyzerProps | Readonly<IotAnalyzerProps>) {
     super(props)
     this.analyzer.init(this.props.onInitialized)
   }
 
-  intervals: any[] = []
-
   componentDidMount() {
+    navigator.mediaDevices.getUserMedia({
+      video: {
+        facingMode: {
+          exact: 'environment'
+        },
+      },
+      audio: false,
+    }).then((m) => {
+      this.videoRef.current!.srcObject = m
+      this.videoRef.current!.onloadedmetadata = () => {
+        this.videoRef.current?.play()
+      }
+    })
     this.intervals.push(
       setInterval(() => {
         this.analyzer.predictFromVideo(this.videoRef.current)
