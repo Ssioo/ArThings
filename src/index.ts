@@ -1,2 +1,3 @@
 require('aframe')
-export { IoTAnalyzer, IotAnalyzerProps } from './vision-analyzer'
+export { IoTVisionOverlay, IotAnalyzerStates, IotAnalyzerProps } from './components/iot-vision-overlay'
+export { VisionAnalyzer } from './utils/vision-analyzer'
